@@ -34,7 +34,7 @@ int main(int argc, char **argv)
 	}
 	else
 	{
-		printf("Неверные параметры. Wrong arguments");
+		printf("Неверные параметры. Wrong arguments\n");
 		system("pause>nul");
 		return 2;
 	}
@@ -44,12 +44,12 @@ int main(int argc, char **argv)
 	
 	if (is_inside_big_circle && is_outside_small_circle)
 	{
-		printf("Точка принадлежит заданной области. Point is placed inside figure");
+		printf("Точка принадлежит заданной области. Point is placed inside figure\n");
 		system("pause>nul");
 		return 1;
 	}
 	
-	printf("Точка не принадлежит заданной области. Point is placed outside figure");
+	printf("Точка не принадлежит заданной области. Point is placed outside figure\n");
     system("pause>nul");
 	return 0;
 }
