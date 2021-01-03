@@ -40,8 +40,17 @@ int main(int argc, char **argv)
 		return 2;
 	}
 	
+	bool is_inside_big_circle = (x+1)*(x+1)+y*y<=4;
+	bool is_outside_small_circle = (x+1)*(x+1)+y*y>=1;
 	
+	if (is_inside_big_circle && is_outside_small_circle)
+	{
+		printf("“очка принадлежит заданной области. Point is placed inside figure");
+		system("pause>nul");
+		return 1;
+	}
 	
+	printf("“очка не принадлежит заданной области. Point is placed outside figure");
     system("pause>nul");
 	return 0;
 }
