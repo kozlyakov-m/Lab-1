@@ -25,16 +25,23 @@ bool validate_args(int argc, char **argv)
 
 int main(int argc, char **argv)
 {
-	
-
+	system ("chcp 1251");
+	double x,y;
 	if(validate_args(argc, argv))
 	{
-		printf("Success");
+		x = atof(argv[1]);
+		y = atof(argv[2]);
+		printf("%f %f", x, y);
 	}
 	else
 	{
-		printf("Failure");
+		printf("Неверные параметры. Wrong arguments");
+		system("pause>nul");
+		return 2;
 	}
+	
+	
+	
     system("pause>nul");
 	return 0;
 }
