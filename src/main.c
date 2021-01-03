@@ -31,7 +31,6 @@ int main(int argc, char **argv)
 	{
 		x = atof(argv[1]);
 		y = atof(argv[2]);
-		printf("%f %f", x, y);
 	}
 	else
 	{
