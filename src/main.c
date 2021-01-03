@@ -4,7 +4,7 @@
 int main(int argc, char **argv)
 {
 	printf("hello world\n");
-    system("pause");
+    system("pause>nul");
 	return 0;
 }
 

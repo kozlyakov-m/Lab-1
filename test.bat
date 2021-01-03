@@ -1,11 +1,11 @@
 @echo off
 chcp 1252 > nul
-del log.txt
 set tests_passed=0
 set tests_failed=0
 
 call build.bat
 
+echo.
 call :test "Positive test" "1 2" 0
 call :test "Negative test" "a b" 2
 
@@ -14,16 +14,21 @@ echo Tests failed: %tests_failed%
 exit /b %errorlevel%
 
 :test
-echo %~1 >> log.txt
-app.exe %~2 < nul >> log.txt
-echo expected: %~3 >> log.txt
-echo actual: %errorlevel% >> log.txt
-echo. >> log.txt
+REM echo -----------------------
+echo %~1:
+echo app.exe %~2
+echo Program output:
+app.exe %~2 < nul
+echo -----------------------
+echo Expected return code: %~3
+echo Actual return code: %errorlevel%
 if %errorlevel%==%~3 (
 	set /a tests_passed=%tests_passed%+1
-	echo %~1 passed
+	echo Test PASSED
 ) else (
 	set /a tests_failed=%tests_failed%+1
-	echo %~1 failed
+	echo Test FAILED
 )
+echo.
+echo.
 exit /b 0
