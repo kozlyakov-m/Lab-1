@@ -25,7 +25,7 @@ bool validate_args(int argc, char **argv)
 
 int main(int argc, char **argv)
 {
-	system ("chcp 1251");
+	system ("chcp 1251>nul");
 	double x,y;
 	if(validate_args(argc, argv))
 	{
